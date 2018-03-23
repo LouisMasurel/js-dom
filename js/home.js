@@ -33,3 +33,31 @@ btn.onclick = function () {
     btn.innerHTML = "Change To Image 1";
   }
 };
+
+
+var otherBtn = document.querySelector(".add-h2");
+var h2Count = 0;
+otherBtn.onclick = function () {
+  h2Count += 1;
+  if (h2Count > 3) {
+    otherBtn.innerHTML = "NO MORE";
+    return;
+  }
+
+  var parentDiv = document.querySelector(".h2-container");
+  // create an <h2> tag (empty and NOT attached to the page)
+  var newH2 = document.createElement("h2");
+  // fill the <h2> with the text "My New H2"
+  newH2.innerHTML = "My New H2";
+  // add the <h2> as a child of our <div>
+  parentDiv.appendChild(newH2);
+};
+
+
+var myHeading = document.querySelector("h1");
+
+myHeading.onclick = function () {
+  var myBody = document.querySelector("body");
+  myBody.removeChild(myHeading);
+  // myHeading.remove();
+};
